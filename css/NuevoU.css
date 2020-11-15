@@ -1,0 +1,66 @@
+*{
+   margin:0px;
+   padding:0px;
+ }
+ body {font-family: "Lato", sans-serif;
+ background-image: url(ima2/14.jpg);  /* imagen de fondo*/
+ background-size:100% 100%;
+ background-attachment:;/*no colocar*/
+ background-repeat:no-repeat;  
+ } 
+ 
+ div#Principal {
+      margin:auto;
+	  background-color:   ;
+      width:auto;
+	  height:1000px;
+	  background-color:white-space;
+	  }
+ 
+div#Secundario {
+      margin:auto;
+	  background-color:;
+      width:1200px;
+	  height:1000px;
+	  background-color: ;
+	  }
+
+div#Header { //Nuevo Usurio 
+      margin:auto;
+	  background-color:#     ;
+      width:1200px;
+	  height:100px;
+	  background-color:white-space;
+	  opacity: 0.7;
+	  }
+	  
+div#Pacientes_Secretaria {
+      margin:auto;
+	  background-color:black;
+      width:1200px;
+	  height:auto;
+	  background-color:white-space;
+	  border-radius: 20px;
+	  border: 3px solid black;
+      border-style: solid;
+	  }
+
+	  
+
+	  
+	  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
