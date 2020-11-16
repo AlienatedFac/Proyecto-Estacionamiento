@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Estacionamiento</title>
+	<title>Usuarios</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
@@ -23,20 +23,14 @@
 	<br>
 	<div class="container">
 		<div class="row">
-			<div class="col-4">
-				<img src="img/qr.jpg" width="50%">
-				<br><br>
-			</div>
-			<div class="col-8">
+			<div class="col-6">
 				<table class="table">
 				  <thead class="thead-dark">
 				    <tr>
 				      <th scope="col">#</th>
 				      <th scope="col">Nombre</th>
 				      <th scope="col">Apellidos</th>
-				      <th scope="col">Hora de Entrada</th>
-				      <th scope="col">Hora de Salida</th>
-				      <th scope="col">Estacionamiento</th>
+				      <th scope="col"></th>
 				    </tr>
 				  </thead>
 				  <tbody>
@@ -44,44 +38,27 @@
 				      <th scope="row">1</th>
 				      <td>JOvenciTO</td>
 				      <td>Lopez</td>
-				      <td>1:30</td>
-				      <td>3:30</td>
-				      <td>Estacionamiento 1</td>
+				      <td><button type="button">Ver Datos</button></td>
 				    </tr>
 				  </tbody>
 				</table>
 			</div>
-			<div class="col-4">
-				<table class="table">
-				  <thead class="thead-dark">
-				    <tr>
-				      <th scope="col">#</th>
-				      <th scope="col">Lugar</th>
-				    </tr>
-				  </thead>
-				  <tbody>
-				    <tr>
-				      <th scope="row">1</th>
-				      <td>Estacionamiento 1</td>
-				    </tr>
-				    <tr>
-				      <th scope="row">2</th>
-				      <td>Estacionamiento 2</td>
-				    </tr>
-				    <tr>
-				      <th scope="row">3</th>
-				      <td>Estacionamiento 3</td>
-				    </tr>
-				    <tr>
-				      <th scope="row">4</th>
-				      <td>Estacionamiento 4</td>
-				    </tr>
-				    <tr>
-				      <th scope="row">5</th>
-				      <td>Estacionamiento 5</td>
-				    </tr>
-				  </tbody>
-				</table>
+			<div class="col-6" align="center">
+				<img src="img/usuario.png" width="40%">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<form>
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Correo</label>
+				    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">Carrera</label>
+				    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+				  </div>
+				</form>
 			</div>
 		</div>
 	</div>
