@@ -1,5 +1,30 @@
 <!DOCTYPE html>
 <html>
+<?php
+
+if($_POST['id']=='')
+{
+$_POST['id']='';
+$var1=''; $var2=''; $var3=''; $var4=''; 
+$var5="img/usuario.png";
+
+}else
+{
+	require("Conexion/Connect_db.php");
+
+	$id=$_POST['id'];
+	//la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
+	$sql2=mysqli_query($mysqli,"SELECT * FROM  usuarios WHERE id='$id'");
+	if($f2=mysqli_fetch_assoc($sql2))
+	{
+		$var1 = $f2["id"];
+		$var2 = $f2["nombre"];
+		$var3 = $f2["apellido"];
+		$var4 = $f2["Correo"];
+		$var5 = $f2["imagen"];
+	}
+}
+?>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,14 +58,18 @@
 				  </thead>
 				  <tbody>
 				    <tr>
-				      <th scope="row"><input type="text" name="" placeholder="Ingresa el ID"></th>
-				      <td><button type="button">Ver Datos</button></td>
+					<form action="usuarios.php" method="post">
+				      <th scope="row"><input type="text" name="id" placeholder="Ingresa el ID"></th>
+					  	
+				      <td><button type="submit">Ver Datos</button></td>
+					</form>  
+
 				    </tr>
 				  </tbody>
 				</table>
 			</div>
 			<div class="col-6" align="center">
-				<img src="img/usuario.png" width="35%">
+				<img src=<?php echo "$var5"; ?> width="35%">
 			</div>
 		</div>
 		<div class="row">
@@ -48,19 +77,19 @@
 				<form>
 					<div class="form-group">
 						<label for="exampleInputEmail1">Nombre</label>
-				    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">	
+				    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo "$var2"; ?>">	
 					</div>
 					<div class="form-group">
 						<label for="exampleInputEmail1">Apellidos</label>
-				    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">	
+				    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo "$var3"; ?>">	
 					</div>
 				  <div class="form-group">
 				    <label for="exampleInputEmail1">Correo</label>
-				    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+				    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo "$var4"; ?>">
 				  </div>
 				  <div class="form-group">
 				    <label for="exampleInputPassword1">Carrera</label>
-				    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+				    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="<?php echo "$var5"; ?>">
 				  </div>
 				</form>
 			</div>
