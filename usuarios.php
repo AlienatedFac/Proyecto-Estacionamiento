@@ -28,28 +28,32 @@
 				  <thead class="thead-dark">
 				    <tr>
 				      <th scope="col">#</th>
-				      <th scope="col">Nombre</th>
-				      <th scope="col">Apellidos</th>
 				      <th scope="col"></th>
 				    </tr>
 				  </thead>
 				  <tbody>
 				    <tr>
-				      <th scope="row">1</th>
-				      <td>JOvenciTO</td>
-				      <td>Lopez</td>
+				      <th scope="row"><input type="text" name="" placeholder="Ingresa el ID"></th>
 				      <td><button type="button">Ver Datos</button></td>
 				    </tr>
 				  </tbody>
 				</table>
 			</div>
 			<div class="col-6" align="center">
-				<img src="img/usuario.png" width="40%">
+				<img src="img/usuario.png" width="35%">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
 				<form>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Nombre</label>
+				    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">	
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Apellidos</label>
+				    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">	
+					</div>
 				  <div class="form-group">
 				    <label for="exampleInputEmail1">Correo</label>
 				    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
