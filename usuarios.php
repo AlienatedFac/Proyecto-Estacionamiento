@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
-
+error_reporting(0); //comentar si hay errores 
 if($_POST['id']=='')
 {
 $_POST['id']='';

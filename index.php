@@ -43,11 +43,27 @@
 				  <tbody>
 				    <tr>
 				      <th scope="row">1</th>
-				      <td>JOvenciTO</td>
+				      <td>Jaziel</td>
 				      <td>Lopez</td>
 				      <td>1:30</td>
 				      <td>3:30</td>
-				      <td>Estacionamiento 1</td>
+				      <td>Estacionamiento 20</td>
+				    </tr>
+					<tr>
+				      <th scope="row">1</th>
+				      <td>Fernando</td>
+				      <td>Araujo</td>
+				      <td>1:30</td>
+				      <td>3:30</td>
+				      <td>Estacionamiento 22</td>
+				    </tr>
+					<tr>
+				      <th scope="row">1</th>
+				      <td>Sergio</td>
+				      <td>Aguilar</td>
+				      <td>1:30</td>
+				      <td>3:30</td>
+				      <td>Estacionamiento 23</td>
 				    </tr>
 				  </tbody>
 				</table>
