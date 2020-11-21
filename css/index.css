@@ -1,3 +1,39 @@
 body{
 	background-image: url("../img/fondo.png");
+	
 }
+.table {
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 5px;
+	font-family: sans-serif;
+	text-align: center;
+	line-height: 1; 
+	backdrop-filter: blur(10px);  
+	-webkit-backdrop-filter: blur(10px);
+
+  }
+  .estar {
+	background-color: rgba(214, 16, 16, 0.527);
+	border-radius: 5px;
+	font-family: sans-serif;
+	text-align: center;
+	line-height: 1; 
+	backdrop-filter: blur(10px);  
+	-webkit-backdrop-filter: blur(10px);
+
+  }
+  .estav {
+	background-color: rgba(20, 214, 20, 0.493);
+	border-radius: 5px;
+	font-family: sans-serif;
+	text-align: center;
+	line-height: 1; 
+	backdrop-filter: blur(10px);  
+	-webkit-backdrop-filter: blur(10px);
+
+  }
+  .tamtab{ /*no jalo */
+	max-width: 50%;
+	max-height: 50%;
+	padding: 20px 40px;
+  }

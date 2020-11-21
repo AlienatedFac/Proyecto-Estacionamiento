@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/modal.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="shortcut icon" href="img/iconos/logo.ico">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -63,7 +64,7 @@
 			<div class="col-6">
 				<table class="table" bgcolor="white">
 				  <thead class="thead-dark">
-				    <tr>
+				    <tr class>
 				      <th scope="col">Lugar</th>
 				      <th scope="col">Entrada</th>
 				      <th scope="col">Salida</th>
@@ -76,7 +77,7 @@
 						{
 							if($f2["estatus"] == 1){
 					?>	
-							<tr bgcolor="green">
+							<tr class="estav">
 						      <th scope="row"><?php echo $f2["lugar"]; ?></th>
 						      <td><?php echo $f2["hora_entrada"]; ?></td>
 						      <td><?php echo $f2["hora_salida"]; ?></td>
@@ -84,7 +85,7 @@
 					<?php
 							}else{
 					?>
-								<tr bgcolor="red">
+								<tr class="estar" >
 							      <th scope="row"><?php echo $f2["lugar"]; ?></th>
 							      <td><?php echo $f2["hora_entrada"]; ?></td>
 							      <td><?php echo $f2["hora_salida"]; ?></td>
@@ -105,6 +106,7 @@
     
 
     <div class="container">
+	<label for="uname"><b>Inserte sus creedenciales de Administrador</b></label>
       <label for="uname"><b>Usuario</b></label>
       <input type="text" placeholder="Ingresa el Usuario de administrador" name="uname" required>
 
