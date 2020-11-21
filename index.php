@@ -1,3 +1,6 @@
+<?php 
+	require("Conexion/Connect_db.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +9,7 @@
 	<title>Estacionamiento</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/modal.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -25,78 +29,70 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-4">
-				<img src="img/qr.jpg" width="50%">
+				<img src="img/qr.jpg" width="70%">
 				<br><br>
 			</div>
 			<div class="col-8">
-				<table class="table">
+				<table class="table" bgcolor="white">
 				  <thead class="thead-dark">
 				    <tr>
 				      <th scope="col">#</th>
 				      <th scope="col">Nombre</th>
 				      <th scope="col">Apellidos</th>
-				      <th scope="col">Hora de Entrada</th>
-				      <th scope="col">Hora de Salida</th>
 				      <th scope="col">Estacionamiento</th>
 				    </tr>
 				  </thead>
 				  <tbody>
-				    <tr>
-				      <th scope="row">1</th>
-				      <td>Jaziel</td>
-				      <td>Lopez</td>
-				      <td>1:30</td>
-				      <td>3:30</td>
-				      <td>Estacionamiento 20</td>
-				    </tr>
-					<tr>
-				      <th scope="row">1</th>
-				      <td>Fernando</td>
-				      <td>Araujo</td>
-				      <td>1:30</td>
-				      <td>3:30</td>
-				      <td>Estacionamiento 22</td>
-				    </tr>
-					<tr>
-				      <th scope="row">1</th>
-				      <td>Sergio</td>
-				      <td>Aguilar</td>
-				      <td>1:30</td>
-				      <td>3:30</td>
-				      <td>Estacionamiento 23</td>
-				    </tr>
+				  	<?php 
+				  		$sql2=mysqli_query($mysqli, "SELECT usuarios.id, usuarios.nombre, usuarios.apellido, lugares.lugar FROM usuarios INNER JOIN lugares ON usuarios.id = lugares.id_usuario");
+						while($f2=mysqli_fetch_assoc($sql2))
+						{
+					?>
+							<tr>
+						      <th scope="row"><?php echo $f2["id"]; ?></th>
+						      <td><?php echo $f2["nombre"]; ?></td>
+						      <td><?php echo $f2["apellido"]; ?></td>
+						      <td><?php echo $f2["lugar"]; ?></td>
+						    </tr>
+					<?php
+						}
+				  	?>
 				  </tbody>
 				</table>
 			</div>
-			<div class="col-4">
-				<table class="table">
+			<div class="col-6">
+				<table class="table" bgcolor="white">
 				  <thead class="thead-dark">
 				    <tr>
-				      <th scope="col">#</th>
 				      <th scope="col">Lugar</th>
+				      <th scope="col">Entrada</th>
+				      <th scope="col">Salida</th>
 				    </tr>
 				  </thead>
 				  <tbody>
-				    <tr>
-				      <th scope="row">1</th>
-				      <td>Estacionamiento 1</td>
-				    </tr>
-				    <tr>
-				      <th scope="row">2</th>
-				      <td>Estacionamiento 2</td>
-				    </tr>
-				    <tr>
-				      <th scope="row">3</th>
-				      <td>Estacionamiento 3</td>
-				    </tr>
-				    <tr>
-				      <th scope="row">4</th>
-				      <td>Estacionamiento 4</td>
-				    </tr>
-				    <tr>
-				      <th scope="row">5</th>
-				      <td>Estacionamiento 5</td>
-				    </tr>
+				    <?php 
+				  		$sql2=mysqli_query($mysqli, "SELECT lugares.lugar, lugares.hora_entrada, lugares.hora_salida, lugares.estatus, lugares.id_usuario FROM lugares");
+						while($f2=mysqli_fetch_assoc($sql2))
+						{
+							if($f2["estatus"] == 1){
+					?>	
+							<tr bgcolor="green">
+						      <th scope="row"><?php echo $f2["lugar"]; ?></th>
+						      <td><?php echo $f2["hora_entrada"]; ?></td>
+						      <td><?php echo $f2["hora_salida"]; ?></td>
+						    </tr>
+					<?php
+							}else{
+					?>
+								<tr bgcolor="red">
+							      <th scope="row"><?php echo $f2["lugar"]; ?></th>
+							      <td><?php echo $f2["hora_entrada"]; ?></td>
+							      <td><?php echo $f2["hora_salida"]; ?></td>
+							    </tr>
+					<?php
+							}
+						}
+				  	?>
 				  </tbody>
 				</table>
 			</div>

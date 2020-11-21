@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2020 a las 00:47:36
--- Versión del servidor: 10.1.36-MariaDB
--- Versión de PHP: 7.2.10
+-- Tiempo de generación: 21-11-2020 a las 20:17:39
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,9 +30,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `lugares` (
   `id` int(11) NOT NULL,
-  `lugar` int(11) NOT NULL,
-  `estatus` int(11) NOT NULL
+  `lugar` varchar(100) NOT NULL,
+  `hora_entrada` varchar(100) DEFAULT NULL,
+  `hora_salida` varchar(100) DEFAULT NULL,
+  `estatus` int(11) NOT NULL,
+  `id_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `lugares`
+--
+
+INSERT INTO `lugares` (`id`, `lugar`, `hora_entrada`, `hora_salida`, `estatus`, `id_usuario`) VALUES
+(1, 'Estacionamiento 1', '1:30', '3:30', 0, 201700054),
+(2, 'Estacionamiento 2', '12:30', '2:30', 0, 202000000),
+(3, 'Estacionamiento 3', '3:30', '5:30', 0, 20170057),
+(4, 'Estacionamiento 4', '9:00', '11:00', 0, 201700000),
+(5, 'Estacionamiento 5', NULL, NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -45,21 +59,18 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(100) NOT NULL,
   `apellido` varchar(100) NOT NULL,
   `Correo` varchar(100) NOT NULL,
-  `imagen` varchar(100) NOT NULL,
-  `hora_entrada` varchar(100) NOT NULL,
-  `hora_salida` varchar(100) NOT NULL,
-  `lugar` int(11) NOT NULL
+  `imagen` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `Correo`, `imagen`, `hora_entrada`, `hora_salida`, `lugar`) VALUES
-(20170057, 'Fernando', 'Araujo', 'substratum21@gmail.com', 'imagen/201700057.png', '10:30', '12:30', 20),
-(201700000, 'Juan', 'Perez Perez', 'juan@gmail.com', 'imagen/201700000.png', '1:30', '3:30', 21),
-(201700054, 'Sergio Raul', 'Aguilar Mendoza', 'sergio_raul@gmail.com', 'imagen/201700054.png', '10:40', '2:40', 22),
-(202000000, 'Pedro', 'Reyes', 'uwuxd@gmail.com', 'imagen/202000000.png', '1:30', '3:30', 5);
+INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `Correo`, `imagen`) VALUES
+(20170057, 'Fernando', 'Araujo', 'substratum21@gmail.com', 'imagen/201700057.png'),
+(201700000, 'Juan', 'Perez Perez', 'juan@gmail.com', 'imagen/201700000.png'),
+(201700054, 'Sergio Raul', 'Aguilar Mendoza', 'sergio_raul@gmail.com', 'imagen/201700054.png'),
+(202000000, 'Pedro', 'Reyes', 'uwuxd@gmail.com', 'imagen/202000000.png');
 
 --
 -- Índices para tablas volcadas
@@ -69,14 +80,14 @@ INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `Correo`, `imagen`, `hora_en
 -- Indices de la tabla `lugares`
 --
 ALTER TABLE `lugares`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `lugar` (`lugar`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -86,7 +97,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `lugares`
 --
 ALTER TABLE `lugares`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -102,7 +113,7 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `lugares`
 --
 ALTER TABLE `lugares`
-  ADD CONSTRAINT `lugares_ibfk_1` FOREIGN KEY (`id`) REFERENCES `usuarios` (`lugar`);
+  ADD CONSTRAINT `lugares_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
