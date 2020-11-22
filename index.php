@@ -21,7 +21,7 @@
   		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
 		      <li class="nav-item active">
-		        <a class="nav-link" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Usuarios<span class="sr-only">(current)</span></a>
+		        <a class="nav-link" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Usuario Avanzado<span class="sr-only">(current)</span></a>
 		      </li>
 		</div>
 		     <img src="img/logo2.png" width="12%">
@@ -106,7 +106,7 @@
     
 
     <div class="container">
-	<label for="uname"><b>Inserte sus creedenciales de Administrador</b></label>
+	<label for="uname"><b>Inserte sus creedenciales de Administrador o Trabajador</b></label>
       <label for="uname"><b>Usuario</b></label>
       <input type="text" placeholder="Ingresa el Usuario de administrador" name="uname" required>
 
