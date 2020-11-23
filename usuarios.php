@@ -42,7 +42,7 @@ $var5="img/usuario.png";
   		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
 		      <li class="nav-item active">
-		        <a class="nav-link" href="usuarios.php">Usuarios<span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="usuarios.php">Usuario Avanzado<span class="sr-only">(current)</span></a>
 		      </li>
 		</div>
 		     <img src="img/logo2.png" width="12%">
@@ -50,11 +50,40 @@ $var5="img/usuario.png";
 	<br>
 	<div class="container">
 		<div class="row">
-			<div class="col-6">
-				<table class="table">
+			
+			<div class="col-4" align="center">
+				<img src=<?php echo "$var5"; ?> width="35%">
+			</div>
+		</div>
+		<div class="row" >
+			
+			<div class="col-4">
+				<form class="forma">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Nombre</label>
+				    	<input type="text" readonly="readonly" class="form-control entrada"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo "$var2"; ?>">	
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Apellidos</label>
+				    	<input type="text" readonly="readonly" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo "$var3"; ?>">	
+					</div>
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Correo</label>
+				    <input type="text" readonly="readonly" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo "$var4"; ?>">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">Carrera</label>
+				    <input type="text" readonly="readonly"class="form-control" id="exampleInputPassword1" placeholder="<?php echo "$var5"; ?>">
+				  </div>
+				</form>
+			</div> 
+			<div class="col-4"></div>
+			<div class="col-4">
+			<div class="row">
+			<table class="table">
 				  <thead class="thead-dark">
 				    <tr>
-				      <th scope="col">#</th>
+				      <th scope="col">Buscar Usuarios</th>
 				      <th scope="col"></th>
 				    </tr>
 				  </thead>
@@ -63,37 +92,15 @@ $var5="img/usuario.png";
 					<form action="usuarios.php" method="post">
 				      <th scope="row"><input type="text" name="id" placeholder="Ingresa el ID"></th>
 					  	
-				      <td><button type="submit">Ver Datos</button></td>
+				      <td><button class="btn btn-success"  type="submit" >Ver Datos</button></td>
 					</form>  
 
 				    </tr>
 				  </tbody>
 				</table>
-			</div>
-			<div class="col-6" align="center">
-				<img src=<?php echo "$var5"; ?> width="35%">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<form>
-					<div class="form-group">
-						<label for="exampleInputEmail1">Nombre</label>
-				    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo "$var2"; ?>">	
-					</div>
-					<div class="form-group">
-						<label for="exampleInputEmail1">Apellidos</label>
-				    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo "$var3"; ?>">	
-					</div>
-				  <div class="form-group">
-				    <label for="exampleInputEmail1">Correo</label>
-				    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo "$var4"; ?>">
-				  </div>
-				  <div class="form-group">
-				    <label for="exampleInputPassword1">Carrera</label>
-				    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="<?php echo "$var5"; ?>">
-				  </div>
-				</form>
+
+			
+			
 			</div>
 		</div>
 	</div>

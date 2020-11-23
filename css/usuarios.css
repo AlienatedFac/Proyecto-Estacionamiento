@@ -1,3 +1,24 @@
 body{
 	background-image: url("../img/fondo.png");
 }
+
+  .forma
+  {
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 5px;
+	font-family: sans-serif;
+	text-align: center;
+	line-height: 1; 
+	backdrop-filter: blur(10px);  
+	-webkit-backdrop-filter: blur(10px);
+  }
+  .table {
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 5px;
+	font-family: sans-serif;
+	text-align: center;
+	line-height: 1; 
+	backdrop-filter: blur(10px);  
+	-webkit-backdrop-filter: blur(10px);
+
+  }
