@@ -42,7 +42,7 @@ $var5="img/usuario.png";
   		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
 		      <li class="nav-item active">
-		        <a class="nav-link" href="usuarios.php">Usuario Avanzado<span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="usuarios.php">Usuario Avanzado<span class="sr-only">(current)</span></a>
 		      </li>
 		</div>
 		     <img src="img/logo2.png" width="12%">
