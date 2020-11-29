@@ -20,6 +20,7 @@
     } else {
 
         // CREAMOS LA CONSULTA
+
         $sql = "SELECT * FROM usuarios WHERE id='$id' AND contrasena='$contrasena'";
         $query = $mysqli->query($sql);
 
