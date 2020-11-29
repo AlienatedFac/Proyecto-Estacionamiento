@@ -20,7 +20,7 @@ import java.util.Hashtable;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    String URL_SERVIDOR = "http://127.0.0.1/Proyecto-Estacionamiento/FIMEEstacionamiento/Conexion/login.php";
+    String URL_SERVIDOR = "http://192.168.0.108/Proyecto-Estacionamiento/FIMEEstacionamiento/Conexion/login.php";
     EditText edtMatricula, edtContrasena;
     Button btnLogin, btnRegistrar;
     @Override
@@ -31,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
         edtMatricula = findViewById(R.id.edtMatricula);
         edtContrasena = findViewById(R.id.edtContrasena);
         btnLogin = findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                login();
+            }
+        });
         btnRegistrar = findViewById(R.id.btnRegistrar);
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 // En este metodo se hace el envio de valores de la aplicacion al servidor
                 Map<String, String> parametros = new Hashtable<String, String>();
                 parametros.put("id", edtMatricula.getText().toString().trim());
+                Toast.makeText(MainActivity.this, edtMatricula.getText().toString().trim(), Toast.LENGTH_LONG).show();
                 parametros.put("contrasena", edtContrasena.getText().toString().trim());
 
                 return parametros;
