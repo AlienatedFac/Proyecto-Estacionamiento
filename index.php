@@ -107,9 +107,11 @@
 						echo "</table>"; //cerramos la tabla
 					?>
 			</div>
-			<div class="col-12 foot">
-				<!-- Footer -->
-<footer class="page-footer font-small blue pt-4">
+			
+		</div>
+
+	</div>
+<footer class="page-footer font-small pt-4 foot">
 
   <!-- Footer Links -->
   <div class="container-fluid text-center text-md-left">
@@ -191,9 +193,6 @@
 
 </footer>
 <!-- Footer -->
-			</div>
-		</div>
-	</div>
 	<div id="id01" class="modal">
   
 	  <form class="modal-content animate" action="admin.php" method="post">
