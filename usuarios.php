@@ -7,11 +7,11 @@ if($_POST['id']=='')
 $_POST['id']='';
 $var1=''; $var2=''; $var3=''; $var4=''; 
 $var5="img/usuario.png";
-
+$boton="disabled='true'";
 }else
 {
 	require("Conexion/Connect_db.php");
-
+	$boton="";
 	$id=$_POST['id'];
 	//la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
 	$sql2=mysqli_query($mysqli,"SELECT * FROM  usuarios WHERE id='$id'");
@@ -93,6 +93,26 @@ $var5="img/usuario.png";
 				      <th scope="row"><input type="text" name="id" placeholder="Ingresa el ID"></th>
 					  	
 				      <td><button class="btn btn-success"  type="submit" >Ver Datos</button></td>
+					</form>  
+
+				    </tr>
+				  </tbody>
+				</table>
+				<table class="table">
+				  <thead class="thead-dark">
+				    <tr>
+				      <th scope="col">Opciones Avanzadas</th>
+				      <th scope="col"></th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+					<form action="actualizar.php" method="post">	
+					  <td><button class="btn btn-success"  type="submit" <?php echo $boton;?> >Actualizar</button></td>
+					</form>	
+					<form action="Conexion/delete.php" method="post">
+					<input type="text" name="id" placeholder=<?php echo $id;  ?>> 
+				      <td><button class="btn btn-success"  type="submit" <?php echo $boton;  ?> >Eliminar</button></td>
 					</form>  
 
 				    </tr>
