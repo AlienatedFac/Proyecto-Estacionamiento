@@ -23,6 +23,9 @@
 		      <li class="nav-item active">
 		        <a class="nav-link" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Usuario Avanzado<span class="sr-only">(current)</span></a>
 		      </li>
+			  <li class="nav-item active">
+				<a class="nav-link" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Ver Mapa<span class="sr-only">(current)</span></a>
+		      </li>
 		</div>
 		     <img src="img/logo2.png" width="12%">
 	</nav>
@@ -30,7 +33,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-5" align="center">
-				<img src="img/qr.jpg" width="40%">
+				<?php   $random = rand(1,4)?>
+				<img src="img/qr<?php $random ?>.jpg" width="40%">
 				<br><br>
 			</div>
 			<div class="col-7">
@@ -128,87 +132,7 @@
 		</div>
 
 	</div>
-<footer class="page-footer font-small pt-4 foot">
 
-  <!-- Footer Links -->
-  <div class="container-fluid text-center text-md-left">
-
-    <!-- Grid row -->
-    <div class="row">
-
-      <!-- Grid column -->
-      <div class="col-md-6 mt-md-0 mt-3">
-
-        <!-- Content -->
-        <h5 class="text-uppercase">Footer Content</h5>
-        <p>Here you can use rows and columns to organize your footer content.</p>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none pb-3">
-
-      <!-- Grid column -->
-      <div class="col-md-3 mb-md-0 mb-3">
-
-        <!-- Links -->
-        <h5 class="text-uppercase">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-3 mb-md-0 mb-3">
-
-        <!-- Links -->
-        <h5 class="text-uppercase">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row -->
-
-  </div>
-  <!-- Footer Links -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
 <!-- Footer -->
 	<div id="id01" class="modal">
   
@@ -217,7 +141,7 @@
 
 	    <div class="container">
 			<label for="uname"><b>Inserte sus creedenciales de Administrador o Trabajador</b></label>
-		      <label for="uname"><b>Usuario</b></label>
+		      <label for="uname"><b>Matricula o Id</b></label>
 		      <input type="text" placeholder="Ingresa el Usuario de administrador" name="uname" required>
 
 		      <label for="psw"><b>Password</b></label>
@@ -231,7 +155,7 @@
 		      <span class="psw">Olvidaste la <a href="#">Constraseña?</a></span>
 		    </div>
 		  </form>
-		</div>
+	</div>
 	<script>
 		// Get the modal
 		var modal = document.getElementById('id01');
@@ -243,6 +167,27 @@
 		    }
 		}
 	</script>
+	<div id="id02" class="modal">
+  
+  		<form class="modal-content animate" action="admin.php" method="post">
+		  <div class="imgcontainer">
+      		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      		<img src="img/mapa.jpeg" alt="Avatar" class="avatar">
+    	</div>
+	  	</form>
+	</div>
+<script>
+		// Get the modal
+		var modal = document.getElementById('id02');
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+		        modal.style.display = "none";
+		    }
+		}
+	</script>
+
 </body>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
