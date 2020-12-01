@@ -121,7 +121,7 @@ $boton="disabled='true'";
 					</tr>	
 					<tr>
 					<form action="Conexion/delete.php" method="post">
-					  <th scope="row"><input type="text" name="id" placeholder="Confirma el ID para Elminar" <?php echo $boton;  ?>></th> 
+					  <th scope="row"><input type="text" name="id" placeholder="Confirma el ID para Eliminar" <?php echo $boton;  ?>></th> 
 				      <td><button class="btn btn-danger"  type="submit" <?php echo $boton;  ?> >Eliminar</button></td>
 					</form>  
 
