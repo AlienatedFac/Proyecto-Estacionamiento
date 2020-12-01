@@ -109,10 +109,15 @@ $boton="disabled='true'";
 				    <tr>
 					<form action="actualizar.php" method="post">	
 					  <td><button class="btn btn-success"  type="submit" <?php echo $boton;?> >Actualizar</button></td>
-					</form>	
+					</form>
+					<form action="registrar.php" method="post">	
+					  <td><button class="btn btn-success"  type="submit">Registrar</button></td>
+					</form>
+					</tr>	
+					<tr>
 					<form action="Conexion/delete.php" method="post">
-					<input type="text" name="id" placeholder=<?php echo $id;  ?>> 
-				      <td><button class="btn btn-success"  type="submit" <?php echo $boton;  ?> >Eliminar</button></td>
+					  <th scope="row"><input type="text" name="id" placeholder="Confirma el ID para Elminar" <?php echo $boton;  ?>></th> 
+				      <td><button class="btn btn-danger"  type="submit" <?php echo $boton;  ?> >Eliminar</button></td>
 					</form>  
 
 				    </tr>

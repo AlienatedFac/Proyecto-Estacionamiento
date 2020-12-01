@@ -67,13 +67,17 @@
 				    <?php
 				    	$sql3=mysqli_query($mysqli, "SELECT * FROM lugares");
 				    	
-				    	$esta = array();
+						$esta = array();
+						$conta=0;
 
 				    	while ($f3=mysqli_fetch_assoc($sql3)){
-				    		$esta = $f3["lugar"];
-				    	}
-
-				    	$num = count($esta);
+							$esta[$conta] = $f3["lugar"];
+							$conta++;
+						}
+						
+						$num = count($esta);
+						
+						
 
 						define('TAM',10); //definimos la constante para el tamaño
 						echo "<table border=1 class='table' bgcolor='white'>"; //creamos la tabla
@@ -93,18 +97,21 @@
 				  			   </thead>";
 				  		echo "<tbody>";
 						$n=1;
-						for ($n1=1; $n1<=TAM; $n1++)
-						{
+						
+						for ($n1=1, $rec=0; $n1<=TAM; $n1++)
+						{	
 							if ($n1 % 2 == 0) //Si la división de la variable $n1 entre dos da 0 creamos una fila gris
 								echo "<tr>";
 							else
 								echo "<tr>"; //creamos fila blanca cuando no sea divisible entre 2
 							for ($n2=1; $n2<=TAM; $n2++)
-							{
-								for ($i=0; $i < $num; $i++) { 
-									if($esta[$i] == $n){
+							{	
+								for ($i=0; $i < 1; $i++) { 
+									
+									if( $rec<$num and $esta[$rec] == $n){
 										echo "<td bgcolor='red'>", $n, "</td>"; //creamos una celda y mostramos el número
-										$n=$n+1; //sumamos 1 al número mostrado para la siguiente vuelta del bucle	
+										$n=$n+1;
+										$rec=$rec+1; //sumamos 1 al número mostrado para la siguiente vuelta del bucle	
 									}else{
 										echo "<td>", $n, "</td>"; //creamos una celda y mostramos el número
 										$n=$n+1; //sumamos 1 al número mostrado para la siguiente vuelta del bucle	
