@@ -37,7 +37,7 @@
 				<table class="table" bgcolor="white">
 				  <thead class="thead-dark">
 				    <tr>
-				      <th scope="col">#</th>
+				      <th scope="col">Matricula</th>
 				      <th scope="col">Nombre</th>
 				      <th scope="col">Apellidos</th>
 				      <th scope="col">Estacionamiento</th>
@@ -53,7 +53,7 @@
 						      <th scope="row"><?php echo $f2["id"]; ?></th>
 						      <td><?php echo $f2["nombre"]; ?></td>
 						      <td><?php echo $f2["apellido"]; ?></td>
-						      <td><?php echo $f2["lugar"]; ?></td>
+						      <td><?php echo "E"; echo $f2["lugar"]; ?></td>
 						    </tr>
 					<?php
 						}
@@ -113,7 +113,7 @@
 										$n=$n+1;
 										$rec=$rec+1; //sumamos 1 al número mostrado para la siguiente vuelta del bucle	
 									}else{
-										echo "<td>", $n, "</td>"; //creamos una celda y mostramos el número
+										echo "<td bgcolor='green'>", $n, "</td>"; //creamos una celda y mostramos el número
 										$n=$n+1; //sumamos 1 al número mostrado para la siguiente vuelta del bucle	
 									}
 								}
