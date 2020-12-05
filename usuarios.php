@@ -32,6 +32,13 @@ $boton="disabled='true'";
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/usuarios.css">
 	<link rel="shortcut icon" href="img/iconos/logo.ico">
+	<script language="JavaScript">
+function pregunta(){
+    if (confirm('¿Estas seguro de Realizar esta accion?')){
+       document.tuformulario.submit()
+    }
+}
+</script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -122,7 +129,7 @@ $boton="disabled='true'";
 					<tr>
 					<form action="Conexion/delete.php" method="post">
 					  <th scope="row"><input type="text" name="id" placeholder="Confirma el ID para Eliminar" <?php echo $boton;  ?>></th> 
-				      <td><button class="btn btn-danger"  type="submit" <?php echo $boton;  ?> >Eliminar</button></td>
+				      <td><button class="btn btn-danger" onclick="pregunta()" value="Enviar" type="submit" <?php echo $boton;  ?> >Eliminar</button></td>
 					</form>  
 
 				    </tr>

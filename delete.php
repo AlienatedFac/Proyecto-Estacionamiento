@@ -25,7 +25,10 @@ while($inicio<$tope)
     }
      $inicio=$inicio+1;
 }
-
+echo '<script type="text/javascript">'
+   , 'function saludo(){ alert('Usuario eliminado Correctamente'); }'
+   , '</script>'
+;
 $conn->close();
 header("Location: reservaradmin.php");
             die();
