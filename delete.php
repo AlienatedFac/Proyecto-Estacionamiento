@@ -19,17 +19,17 @@ while($inicio<$tope)
     
     if ($conn->query($sql) === TRUE) {
       echo "New record DELETED successfully";
-      
+      echo'<script type="text/javascript">
+      alert("¡Lugares Eliminados!");
+      window.location.href="reservaradmin.php";
+    </script>';
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
+      echo "New record DELETED successfully";
+      echo'<script type="text/javascript">
+      alert("¡Error, puerba de nuevo!");
+      window.location.href="reservaradmin.php";
     }
      $inicio=$inicio+1;
 }
-echo '<script type="text/javascript">'
-   , 'function saludo(){ alert('Usuario eliminado Correctamente'); }'
-   , '</script>'
-;
-$conn->close();
-header("Location: reservaradmin.php");
-            die();
 ?>

@@ -36,22 +36,40 @@
 			</div>
 		</div>
 		<div class="row" >
-			<div class="col-4"> </div>
+		<div class="col-4"></div>
+		
 			<div class="col-4">
-				<form action="regis.php" method="post">
+				<form class="forma" action="regis.php" method="post">
                 <div class="form-group">
 						<label for="exampleInputEmail1">ID o Matricula</label>
-				    	<input type="text" name="id" placeholder="Matricula">	
+				    	<input type="text" name="id" class="form-control" placeholder="Matricula" required>
+				</div>
+				<div class="form-group">
 						<label for="exampleInputEmail1">Contraseña</label>
-				    	<input type="text" name="contrasena"  placeholder="Contraseña">	
+				    	<input type="text" class="form-control" name="contrasena"  placeholder="Contraseña" required>	
+				</div>
+				<div class="form-group">
 						<label for="exampleInputEmail1">Nombre</label>
-				    	<input type="text" name="nombre" placeholder="Nombre">
+				    	<input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
+				</div>
+				<div class="form-group">	
 						<label for="exampleInputEmail1">Apellidos</label>
-				    	<input type="text" name="apellidos" placeholder="Apellidos">	
-				        <label for="exampleInputEmail1">Correo</label>
-				        <input type="text" name="correo"  placeholder="Correo">
+				    	<input type="text" name="apellidos"  class="form-control"placeholder="Apellidos" required>	
+				</div>
+				<div class="form-group">
+						<label for="exampleInputEmail1">Correo</label>
+				        <input type="text" name="correo" class="form-control" placeholder="Correo" required>
+				</div>
+				<div class="form-group">
 				        <label for="exampleInputPassword1">tipo</label>
-				        <input type="text" name="tipo"  placeholder="tipo">
+				        <input list="usuarios" type="text" name="tipo" class="form-control" placeholder="Tipo" required>
+						<datalist id="usuarios">
+						<option value="admin">
+						<option value="maestro">
+						<option value="admin">
+ 						</datalist>
+				</div>
+				<div class="form-group">
                         <button class="btn btn-success"  type="submit" >Registrar</button>
                 </div>
 				</form>

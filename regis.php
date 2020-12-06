@@ -18,11 +18,16 @@ $var1 = $_POST['id']; $var2 = $_POST['nombre']; $var3 = $_POST['apellidos'];$var
     
     if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
+      echo'<script type="text/javascript">
+      alert("Usuario Registrado");
+      window.location.href="usuarios.php";
+    </script>';
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
 $conn->close();
+
 //header("Location: usuarios.php");
             //die();
 ?>
