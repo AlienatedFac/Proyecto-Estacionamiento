@@ -22,6 +22,7 @@ $boton="disabled='true'";
 		$var3 = $f2["apellido"];
 		$var4 = $f2["Correo"];
 		$var5 = $f2["imagen"];
+		$var6 = $f2["Tipo"];
 	}
 }
 ?>
@@ -32,6 +33,13 @@ $boton="disabled='true'";
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/usuarios.css">
 	<link rel="shortcut icon" href="img/iconos/logo.ico">
+	<script language="JavaScript">
+function pregunta(){
+    if (confirm('¿Estas seguro de Realizar esta accion?')){
+       document.tuformulario.submit()
+    }
+}
+</script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -65,6 +73,10 @@ $boton="disabled='true'";
 			<div class="col-4">
 				<form class="forma">
 					<div class="form-group">
+						<label for="exampleInputEmail1">Matricula o ID</label>
+				    	<input type="text" readonly="readonly" class="form-control entrada"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo "$var1"; ?>">	
+					</div>
+					<div class="form-group">
 						<label for="exampleInputEmail1">Nombre</label>
 				    	<input type="text" readonly="readonly" class="form-control entrada"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo "$var2"; ?>">	
 					</div>
@@ -77,9 +89,9 @@ $boton="disabled='true'";
 				    <input type="text" readonly="readonly" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo "$var4"; ?>">
 				  </div>
 				  <div class="form-group">
-				    <label for="exampleInputPassword1">Carrera</label>
-				    <input type="text" readonly="readonly"class="form-control" id="exampleInputPassword1" placeholder="<?php echo "$var5"; ?>">
-				  </div>
+						<label for="exampleInputEmail1">Tipo de Usuario</label>
+				    	<input type="text" readonly="readonly" class="form-control entrada"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo "$var6"; ?>">	
+					</div>
 				</form>
 			</div> 
 			<div class="col-4"></div>
@@ -95,7 +107,7 @@ $boton="disabled='true'";
 				  <tbody>
 				    <tr>
 					<form action="usuarios.php" method="post">
-				      <th scope="row"><input type="text" name="id" placeholder="Ingresa el ID"></th>
+				      <th scope="row"><input type="text" name="id" placeholder="Ingresa el ID" required></th>
 					  	
 				      <td><button class="btn btn-success"  type="submit" >Ver Datos</button></td>
 					</form>  
@@ -121,8 +133,8 @@ $boton="disabled='true'";
 					</tr>	
 					<tr>
 					<form action="Conexion/delete.php" method="post">
-					  <th scope="row"><input type="text" name="id" placeholder="Confirma el ID para Eliminar" <?php echo $boton;  ?>></th> 
-				      <td><button class="btn btn-danger"  type="submit" <?php echo $boton;  ?> >Eliminar</button></td>
+					  <th scope="row"><input type="text" name="id" placeholder="Confirma el ID para Eliminar" <?php echo $boton; ?> required></th> 
+				      <td><button class="btn btn-danger" onclick="pregunta()" value="Enviar" type="submit" <?php echo $boton;  ?> >Eliminar</button></td>
 					</form>  
 
 				    </tr>

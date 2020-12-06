@@ -27,17 +27,16 @@
 				<a class="nav-link" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Ver Mapa<span class="sr-only">(current)</span></a>
 		      </li>
 		</div>
-		     <img src="img/logo2.png" width="12%">
+		     <img src="img/logo2.png" width="8%">
 	</nav>
 	<br>
 	<div class="container">
 		<div class="row">
-			<div class="col-5" align="center">
+			<div class="col-7" align="center">
 				<?php   $random = rand(1,4)?>
-				<img src="img/qr<?php $random ?>.jpg" width="40%">
+				<img src="img/qr<?php $random ?>.jpg" width="30%">
 				<br><br>
-			</div>
-			<div class="col-7">
+				
 				<table class="table" bgcolor="white">
 				  <thead class="thead-dark">
 				    <tr>
@@ -65,9 +64,8 @@
 				  </tbody>
 				</table>
 			</div>
-			<div class="col-4">
-				
-				  <tbody>
+			<div class="col-5">
+			<tbody>
 				    <?php
 				    	$sql3=mysqli_query($mysqli, "SELECT * FROM lugares");
 				    	
@@ -127,6 +125,10 @@
 						echo "</tbody>";
 						echo "</table>"; //cerramos la tabla
 					?>
+			</div>
+			<div class="col-4">
+				
+				 
 			</div>
 			
 		</div>

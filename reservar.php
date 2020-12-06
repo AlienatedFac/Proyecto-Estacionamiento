@@ -1,3 +1,4 @@
+
 <?php
 $servername = "localhost";
 $username = "root";
@@ -16,17 +17,24 @@ $tope=$var2 + 1;
 while($inicio<$tope)
 {
     $sql = "INSERT INTO lugares (id, lugar, hora_entrada, hora_salida, estatus, id_usuario)
-    VALUES ($inicio, $inicio, $var3, $var4, 1, 1000 )";
+    VALUES ($inicio, $inicio, '$var3', '$var4', 1, 1000 )";
     
     if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
+      echo'<script type="text/javascript">
+      alert("¡Reserva correcta!");
+      window.location.href="reservaradmin.php";
+      </script>';
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
+      echo'<script type="text/javascript">
+      alert("Ha ocurrido un error inesperado o los datos ingresados son incorrectos\nPrueba de nuevo\nNo se ha ingresado nada");
+      window.location.href="reservaradmin.php";
+      </script>';
     }
      $inicio=$inicio+1;
 }
 
 $conn->close();
-header("Location: trabajador.php");
             die();
 ?>

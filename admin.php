@@ -8,18 +8,24 @@ $sql2=mysqli_query($mysqli,"SELECT id, contrasena FROM  usuarios WHERE id='$id' 
 if($f2=mysqli_fetch_assoc($sql2))
 {
    
-    header("Location: usuarios.php");
-    die();  
+    echo'<script type="text/javascript">
+    alert("¡Bienvenido de nuevo!");
+    window.location.href="usuarios.php";
+  </script>';
 }   else
     {
         $sql2=mysqli_query($mysqli,"SELECT id, contrasena FROM  usuarios WHERE id='$id' and contrasena= '$contra' and tipo= 'maestro' " );
         if($f2=mysqli_fetch_assoc($sql2))
         {
-            header("Location: trabajador.php");
-            die();  
+            echo'<script type="text/javascript">
+      alert("¡Bienvenido de nuevo!");
+      window.location.href="trabajador.php";
+    </script>';
         }else{
-        header("Location: index.php");
-        die();  
+            echo'<script type="text/javascript">
+            alert("Usuario o contraseña incorrectos\n Revisa tus datos");
+            window.location.href="index.php";
+          </script>';  
     }
      
 }
