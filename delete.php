@@ -27,8 +27,9 @@ while($inicio<$tope)
       echo "Error: " . $sql . "<br>" . $conn->error;
       echo "New record DELETED successfully";
       echo'<script type="text/javascript">
-      alert("¡Error, puerba de nuevo!");
+      alert("¡Error, prueba de nuevo!");
       window.location.href="reservaradmin.php";
+      </script>';
     }
      $inicio=$inicio+1;
 }

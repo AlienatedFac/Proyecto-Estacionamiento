@@ -34,7 +34,7 @@
 		<div class="row">
 			<div class="col-7" align="center">
 				<?php   $random = rand(1,4)?>
-				<img src="img/qr<?php $random ?>.jpg" width="30%">
+				<img src="img/qr<?php echo $random; ?>.png" width="30%">
 				<br><br>
 				
 				<table class="table" bgcolor="white">

@@ -3,7 +3,11 @@
     background-color: #f44336;
     color: white;
   }
-  
+  .alerta{
+    padding: 20px;
+      background-color: #24c547;
+      color: white;
+    }
   .closebtn {
     margin-left: 15px;
     color: white;

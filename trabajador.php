@@ -52,11 +52,11 @@
 				  </thead>
 				  <tbody>
 							<tr>
-                            <form action="reservar.php" method="post">
-						      <th><input type="text" name="de" placeholder="De"></th>
-						      <td><input type="text" name="hasta" placeholder="Hasta"></td>
-						      <td><input type="text" name="inicio" placeholder="00:00"></td>
-						      <td><input type="text" name="fin" placeholder="00:00"></td>
+                            <form action="reservart.php" method="post">
+						      <th><input type="text" name="de" placeholder="De" required></th>
+						      <td><input type="text" name="hasta" placeholder="Hasta" required></td>
+						      <td><input type="text" name="inicio" placeholder="00:00" required></td>
+						      <td><input type="text" name="fin" placeholder="00:00" required></td>
                               <td><button class="btn btn-success"  type="submit">Reservar</button></td>
                             </form>
 						    </tr>
