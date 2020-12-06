@@ -1,6 +1,8 @@
 package com.example.fimeestacionamiento;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,16 +15,22 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Hashtable;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    String URL_SERVIDOR = "http://192.168.0.108/Proyecto-Estacionamiento/FIMEEstacionamiento/Conexion/login.php";
+    RequestQueue requestQueue;
     EditText edtMatricula, edtContrasena;
     Button btnLogin, btnRegistrar;
+    String usuario,contrasena,idUsuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,60 +41,53 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                login();
+            public void onClick(View v) {
+                buscarUsuario("https://fimeses.000webhostapp.com/app/login.php?usuario=" + edtMatricula.getText()+"");
             }
         });
         btnRegistrar = findViewById(R.id.btnRegistrar);
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Registro.class);
-                startActivity(intent);
+                Intent welcome = new Intent(MainActivity.this, Registro.class);
+                startActivity(welcome);
             }
         });
     }
+    private void buscarUsuario(String URL){
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                JSONObject jsonObject = null;
+                for (int i = 0; i < response.length(); i++) {
+                    try {
 
+                        jsonObject = response.getJSONObject(i);
+                        usuario = jsonObject.getString("id");
+                        contrasena = jsonObject.getString("contrasena");
+                        String U = usuario;
 
-    public void login() {
-        StringRequest stringRequest;
-        stringRequest = new StringRequest(Request.Method.POST, URL_SERVIDOR,
-                new Response.Listener<String>() {
-
-                    @Override
-                    public void onResponse(String response) {
-                        // En este apartado se programa lo que deseamos hacer en caso de no haber errores
-
-                        if(response.equals("ERROR 1")) {
-                            Toast.makeText(MainActivity.this, "Se deben de llenar todos los campos.", Toast.LENGTH_SHORT).show();
-                        } else if(response.equals("ERROR 2")) {
-                            Toast.makeText(MainActivity.this, "No existe ese registro.", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(MainActivity.this, "Inicio de Sesion exitoso.", Toast.LENGTH_LONG).show();
+                        if(usuario.equals(edtMatricula.getText().toString()) && contrasena.equals(edtContrasena.getText().toString()))
+                        {
+                            Toast.makeText(MainActivity.this, "Bienvenido ID: "+ U, Toast.LENGTH_SHORT).show();
+                            Intent welcome = new Intent(MainActivity.this, Menu.class);
+                            startActivity(welcome);
+                            break;
                         }
-
+                        Toast.makeText(MainActivity.this, "Usuario o contraseña invalida", Toast.LENGTH_SHORT).show();
+                    } catch (JSONException e) {
+                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-                }, new Response.ErrorListener() {
+                }
+            }
+        }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // En caso de tener algun error en la obtencion de los datos
-                Toast.makeText(MainActivity.this, "ERROR AL INICIAR SESION", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "" + error,Toast.LENGTH_LONG).show();
             }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-
-                // En este metodo se hace el envio de valores de la aplicacion al servidor
-                Map<String, String> parametros = new Hashtable<String, String>();
-                parametros.put("id", edtMatricula.getText().toString().trim());
-                Toast.makeText(MainActivity.this, edtMatricula.getText().toString().trim(), Toast.LENGTH_LONG).show();
-                parametros.put("contrasena", edtContrasena.getText().toString().trim());
-
-                return parametros;
-            }
-        };
-
-        RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
-        requestQueue.add(stringRequest);
+        }
+        );
+        requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
     }
 }
