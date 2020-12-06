@@ -44,7 +44,7 @@ public class Registro extends AppCompatActivity {
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ejecutarServicio("https://fimeses.000webhostapp.com/app/registrar.php");
+                ejecutarServicio("https://fimeses.000webhostapp.com/app/registro.php");
             }
         });
     }
@@ -58,7 +58,7 @@ public class Registro extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), error.toString(),Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
@@ -69,13 +69,13 @@ public class Registro extends AppCompatActivity {
                 parametros.put("contrasena", contrasena.getText().toString());
                 parametros.put("nombre", nombre.getText().toString());
                 parametros.put("apellido", apellido.getText().toString());
-                parametros.put("Correo", correo.getText().toString());
-                parametros.put("Tipo", tipo.getText().toString());
+                parametros.put("correo", correo.getText().toString());
+                parametros.put("tipo", tipo.getText().toString());
 
                 return parametros;
             }
         };
-        requestQueue= Volley.newRequestQueue(this);
+        requestQueue= Volley.newRequestQueue(Registro.this);
         requestQueue.add(stringRequest);
     }
     private void limpiarFormulario(){
