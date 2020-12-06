@@ -11,42 +11,84 @@
         android:id="@+id/textView3"
         android:layout_width="125dp"
         android:layout_height="31dp"
-        android:text="Hora"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="91dp" />
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="27dp"
+        android:text="Hora de Entrada"
+        app:layout_constraintBottom_toTopOf="@+id/edtLugar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
         android:text="Lugar de Estacionamiento"
-        tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="219dp" />
+        app:layout_constraintBottom_toTopOf="@+id/edtLugar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="43dp"
         android:text="Hora de Salida"
-        tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="389dp" />
+        app:layout_constraintBottom_toTopOf="@+id/edtSalida"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/edtLugar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
         android:ems="10"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="270dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.287"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edtLugar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="552dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/edtSalida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="449dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.287"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="96dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="144dp"
+        android:text="Reservar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
