@@ -52,14 +52,6 @@ public class Insertar extends AppCompatActivity {
 
             }
         });
-        btntest = findViewById(R.id.btntest);
-        btntest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent welcome = new Intent(Insertar.this, Salir.class);
-                startActivity(welcome);
-            }
-        });
     }
     private void ejecutarServicio(String URL){
         final String salida=  hora_salida.getText().toString();

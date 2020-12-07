@@ -1,0 +1,25 @@
+public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Intent welcome = this.getIntent();
+        Bundle extra = welcome.getExtras();
+        aidi = extra.getString("U");
+        salida = extra.getString("salida");
+        datos = extra.getString("datos");
+        Uri uri = Uri.parse(datos);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+        setContentView(R.layout.activity_salir);
+        Thread myThread = null;
+        sal=(TextView)findViewById(R.id.textView4);
+        sal.setText(salida);
+        salir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ejecutarServicio("https://fimeses.000webhostapp.com/app/delete.php");
+
+            }
+        });
+        Runnable runnable = new CountDownRunner();
+        myThread= new Thread(runnable);
+        myThread.start();
+    }

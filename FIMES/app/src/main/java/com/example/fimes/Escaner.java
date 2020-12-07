@@ -29,16 +29,11 @@ public class Escaner extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         IntentResult result=IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
         String datos =result.getContents();
-        Uri uri = Uri.parse(datos);
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(intent);
         Intent welcome = new Intent(Escaner.this, Salir.class);
         welcome.putExtra("U", aidi);
         welcome.putExtra("salida", salida);
         welcome.putExtra("datos", datos );
         startActivity(welcome);
-
-
     }
 
 }
